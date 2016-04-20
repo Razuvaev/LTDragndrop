@@ -1,1 +1,0 @@
-Drag'n'drop with custom layout on iPhone
