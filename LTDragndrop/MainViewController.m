@@ -48,14 +48,14 @@ static const CGFloat oneRowHeight = 120;
 }
 
 - (DragndropTableViewHeader *)header {
-    _header = [[DragndropTableViewHeader alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, headerHeight)];
+    _header = [[DragndropTableViewHeader alloc] init];
     [_header setDelegate:self];
     return _header;
 }
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         [_tableView setDelegate:self];
         [_tableView setDataSource:self];
         [_tableView registerClass:[DragndropTableViewCell class] forCellReuseIdentifier:cellIdentifier];

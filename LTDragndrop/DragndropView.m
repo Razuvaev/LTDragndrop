@@ -11,6 +11,7 @@
 #import "DragndropCollectionViewCell.h"
 
 static NSInteger numberOfSections = 7; //rows in collectionView
+static NSInteger numberOfColumns = 4; //items in one row in collectionView;
 
 static NSString *dragndropCellIdentifier = @"dragndropCell";
 
@@ -26,7 +27,7 @@ static NSString *dragndropCellIdentifier = @"dragndropCell";
     self = [super initWithFrame:frame];
     if (self) {
         [self setBackgroundColor:[UIColor whiteColor]];
-        _numberOfItemsInSection = 4;
+        _numberOfItemsInSection = numberOfColumns;
         [self setupUI];
     }
     return self;
@@ -39,7 +40,7 @@ static NSString *dragndropCellIdentifier = @"dragndropCell";
 
 - (UICollectionView *)CV {
     if (!_CV) {
-        _CV = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) collectionViewLayout:self.layout];
+        _CV = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.layout];
         [_CV setDelegate:self];
         [_CV setDataSource:self];
         [_CV setBounces:YES];

@@ -8,7 +8,6 @@
 
 #import "DragndropCollectionViewCell.h"
 
-static const CGFloat leftMargin = 10;
 static const CGFloat borderWidth = 1;
 
 @interface DragndropCollectionViewCell ()

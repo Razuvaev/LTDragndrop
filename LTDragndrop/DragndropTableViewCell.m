@@ -28,7 +28,7 @@ static const CGFloat dragndropViewHeight = 120*7;
 
 - (DragndropView *)dragndropView {
     if (!_dragndropView) {
-        _dragndropView = [[DragndropView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, dragndropViewHeight)];
+        _dragndropView = [[DragndropView alloc] init];
     }
     return _dragndropView;
 }
@@ -42,7 +42,7 @@ static const CGFloat dragndropViewHeight = 120*7;
 #pragma mark - Layout
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [_dragndropView setFrame:CGRectMake(0, 0, self.frame.size.width, 120*7)];
+    [_dragndropView setFrame:CGRectMake(0, 0, self.frame.size.width, dragndropViewHeight)];
 }
 
 #pragma mark - Actions
